@@ -1,0 +1,246 @@
+[
+  {
+    "settings": {
+      "openEditInWindow": true,
+      "openEditInWindow.popup": false,
+      "windowPosition": {
+        "height": 1415,
+        "left": 1148,
+        "top": 49,
+        "width": 1280
+      },
+      "show-badge": true,
+      "disableAll": false,
+      "exposeIframes": false,
+      "exposeStyleName": false,
+      "newStyleAsUsercss": true,
+      "styleViaASS": false,
+      "styleViaXhr": false,
+      "patchCsp": false,
+      "urlInstaller": true,
+      "config.autosave": true,
+      "schemeSwitcher.enabled": "system",
+      "schemeSwitcher.nightStart": "18:00",
+      "schemeSwitcher.nightEnd": "06:00",
+      "popup.enabledFirst": true,
+      "popup.stylesFirst": true,
+      "popup.autoResort": false,
+      "popup.borders": false,
+      "popup.findSort": "u",
+      "manage.onlyEnabled": false,
+      "manage.onlyLocal": false,
+      "manage.onlyUsercss": false,
+      "manage.onlyEnabled.invert": false,
+      "manage.onlyLocal.invert": false,
+      "manage.onlyUsercss.invert": false,
+      "manage.actions.expanded": true,
+      "manage.backup.expanded": true,
+      "manage.filters.expanded": true,
+      "manage.minColumnWidth": 750,
+      "manage.newUI": true,
+      "manage.newUI.favicons": false,
+      "manage.newUI.faviconsGray": true,
+      "manage.newUI.targets": 3,
+      "manage.newUI.sort": "title,asc",
+      "manage.searchMode": "meta",
+      "editor.options": {},
+      "editor.toc.expanded": true,
+      "editor.options.expanded": true,
+      "editor.lint.expanded": true,
+      "editor.publish.expanded": true,
+      "editor.lineWrapping": true,
+      "editor.smartIndent": true,
+      "editor.indentWithTabs": false,
+      "editor.tabSize": 4,
+      "editor.keyMap": "default",
+      "editor.theme": "default",
+      "editor.beautify": {
+        "end_with_newline": false,
+        "indent_conditional": true,
+        "indent_mozdoc": true,
+        "newline_after_open_brace": true,
+        "newline_before_close_brace": true,
+        "newline_before_open_brace": false,
+        "newline_between_properties": true,
+        "newline_between_rules": false,
+        "preserve_newlines": true,
+        "selector_separator_newline": true
+      },
+      "editor.beautify.hotkey": "",
+      "editor.lintDelay": 300,
+      "editor.linter": "csslint",
+      "editor.lintReportDelay": 500,
+      "editor.matchHighlight": "token",
+      "editor.autoCloseBrackets": true,
+      "editor.autocompleteOnTyping": false,
+      "editor.contextDelete": false,
+      "editor.selectByTokens": true,
+      "editor.arrowKeysTraverse": true,
+      "editor.appliesToLineWidget": true,
+      "editor.autosaveDraft": 10,
+      "editor.livePreview": true,
+      "editor.targetsFirst": true,
+      "editor.colorpicker": true,
+      "editor.colorpicker.hexUppercase": false,
+      "editor.colorpicker.hotkey": "",
+      "editor.colorpicker.color": "#dee2e6",
+      "editor.colorpicker.maxHeight": 300,
+      "hotkey._execute_browser_action": "",
+      "hotkey.openManage": "",
+      "hotkey.styleDisableAll": "",
+      "sync.enabled": "google",
+      "iconset": -1,
+      "badgeDisabled": "#8B0000",
+      "badgeNormal": "#006666",
+      "headerWidth.edit": 280,
+      "headerWidth.install": 280,
+      "headerWidth.manage": 280,
+      "popupWidth": 246,
+      "popupWidthMax": 280,
+      "updateInterval": 24,
+      "updateOnlyEnabled": false,
+      "popup.breadcrumbs": true,
+      "popup.breadcrumbs.usePath": false
+    },
+    "order": {
+      "main": [],
+      "prio": []
+    }
+  },
+  {
+    "enabled": true,
+    "installDate": 1667327277704,
+    "sections": [
+      {
+        "code": "/* ==UserStyle==\n@name           11/1/2022, 2:27:13 PM\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */",
+        "start": 0
+      },
+      {
+        "code": "/*  Systemwide Improvements */\n\n        /*  Login Notices GONE (not working yet)*/\n           /*     #login_notices_modal, #tenstreet_blog_modal{\n                    display: none !important;\n                }\n                body .modal-open {\n                    overflow:auto !important;\n                }\n    \\*/\n\n        /*  Animation removal, aint nobody got time for dat */\n                * { /*  Global Animation removal, may cause issues. Use .collapsing, a:hover, a, .fade, .active {  if so. */\n                    transition: none !important;\n                    animation: none !important;\n                }\n\n                #preloader { /* loader animation off */\n                    display:none !important;\n                }\n\n        /* Turn off side bar, sloppy style */\n                #side_nav_bar.active {\n                    display: none;\n                }\n                #expand_widget_cell {\n                    display: none;\n                }\n\n         /* Disabling Page Delay Warning */\n                #content {\n                    display:block !important;\n                }\n\n                #page_delay_countdown_span, #page-delay-container {         \n                    display: none !important;\n                }\n                #page-delay-container:has(#page-delay-warning-message) + #content { /* Content pulses red when page delay */\n                    animation-name: redalert;\n                    animation-duration: 2s;\n                    animation-iteration-count: infinite;\n                    animation-direction: alternate-reverse;\n                    animation-timing-function: ease;\n                }\n\n        /* Logout Page - Disable The Non-Functional login */\n                #login_block_col .banner-sec div.carousel#carousel {\n                    display: none;\n                }\n\n                #login_block_col .banner-sec::after {\n                    display: block;\n                    margin: auto !important;\n                    text-align: center;\n                    padding-top: 30px;\n                    font-size: 3.8em;\n                    color: #d41801;\n                    content: \"Concierge Shell Login\";\n                }\n                #login_block_col .login-sec form.login-form#loginForm {\n                    display: none;\n                }\n                #login_block_col .login-sec div {\n                    display: none;\n                }\n                #login_block_col .login-sec img {\n                    width: 100%;\n                    display: block;\n                    margin: auto !important;\n                }\n\n    \n    \n    \n/*  Job Store Vendor Screen Improvements */\n\n                .merchant-list-card:has(table#suggested_jobs) { /* Hide Contact Concierge without breaking the quick order */\n                  display: none !important; \n            }\n\n\n            /*  Very sloppy way of hiding Merch discovery tool by default but ensuring it still works. */\n                    .card-title-container:has(.collapse-btn) ~ #merchant-discovery-tool-card-content.show {\n                        display: none !important;\n                    }\n\n                    .card-title-container:focus-within ~ #merchant-discovery-tool-card-content {\n                        display: block !important;\n                    }\n\n\n            /* Order Cancellation speedup */\n                    .btn {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n                    .modal.fade .modal-dialog {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n                    #jobstore_modal {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n\n            /* Vendor Table Improvements */\n                    .order_status_container.w-100 { /* More padding from top */\n                        padding-top: 25px;\n                    }\n                    .order_status_container.w-100 > div > div { /* More padding around inital order */\n                        padding-bottom: 15px;\n                        margin-left: 25px;\n                    }\n                    .order-status-table {\n                        table-layout: fixed;\n                    }\n\n                        .active-job-id-name + td.text-center {\n                        max-width: 100px;\n                        white-space: nowrap;\n                        overflow: hidden;\n                    }\n\n                    .order-status-table > thead > tr > th:nth-child(3) { /* Active Job column larger */\n                        width: 300px !important;\n                        margin-right: 20px\n                    }\n                    .active-job-id-name {\n                        padding-right: 20px !important;\n                    }\n\n                    .order-status-table > thead > tr > th:nth-child(4) {         /* Date column smaller */\n                        max-width: 5ch !important;\n                        min-width: 5ch !important;\n                        width: 5ch !important;\n                    }\n\n\n\n\n\n /* Location Set Map Customizations */\n            #map_holder, #location_map, .mapboxgl-canvas { /* More height */\n                height: 600px !important;\n            }\n            #ms-list {  /* More height 2 */\n                height: 600px !important;\n            }\n            .mapboxgl-marker > svg { /* Smaller map pin */\n                padding-top:15px;\n            }\n            .mapboxgl-marker > svg > path { /* custom pin color (idk, wanted to see if i could) */\n                fill: #3787cb;\n            }\n\n    \n    \n /* Active Jobs Customizations */\n    \n    #posting-title-tips-container { /* Hide more tips */\n        display: none !important;\n    }\n\n    #display-order-input-container { /* Hide display order */\n        display: none !important;\n    }\n\n    #template_div #template .job-title-tips { /* Hide job title tips */\n        display: none !important;\n    }\n\n    .modal-lg, .modal-xl { /* Wider AJ screen */\n        max-width: 90%;\n    }\n    .form-control { /* Improvements to the form boxes (deeper black, better corners) */\n        border: 1px solid #BAC2CA;\n        color:#000;\n        border-radius: 0.2rem;\n    }\n    \n    #cke_2_contents.cke_contents.cke_reset { /* Bigger Job Description Section */\n        height: 430px !important;\n     }\n    \n    .jt_detail_textarea { /* Smaller Job Highlights */\n        height: 3.5ch !important;\n    }\n\n\n/* TOOLS */\n@keyframes redalert { /* Content pulses red when called */\n  from {\n    \n    }\n  to {\n    background-color: #ea9999;\n    }\n}",
+        "start": 236,
+        "regexps": [
+          ".*modaldashboard.*"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           11/1/2022, 2:27:13 PM\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n@-moz-document regexp(\".*modaldashboard.*\") {\n/*  Systemwide Improvements */\n\n        /*  Login Notices GONE (not working yet)*/\n           /*     #login_notices_modal, #tenstreet_blog_modal{\n                    display: none !important;\n                }\n                body .modal-open {\n                    overflow:auto !important;\n                }\n    \\*/\n\n        /*  Animation removal, aint nobody got time for dat */\n                * { /*  Global Animation removal, may cause issues. Use .collapsing, a:hover, a, .fade, .active {  if so. */\n                    transition: none !important;\n                    animation: none !important;\n                }\n\n                #preloader { /* loader animation off */\n                    display:none !important;\n                }\n\n        /* Turn off side bar, sloppy style */\n                #side_nav_bar.active {\n                    display: none;\n                }\n                #expand_widget_cell {\n                    display: none;\n                }\n\n         /* Disabling Page Delay Warning */\n                #content {\n                    display:block !important;\n                }\n\n                #page_delay_countdown_span, #page-delay-container {         \n                    display: none !important;\n                }\n                #page-delay-container:has(#page-delay-warning-message) + #content { /* Content pulses red when page delay */\n                    animation-name: redalert;\n                    animation-duration: 2s;\n                    animation-iteration-count: infinite;\n                    animation-direction: alternate-reverse;\n                    animation-timing-function: ease;\n                }\n\n        /* Logout Page - Disable The Non-Functional login */\n                #login_block_col .banner-sec div.carousel#carousel {\n                    display: none;\n                }\n\n                #login_block_col .banner-sec::after {\n                    display: block;\n                    margin: auto !important;\n                    text-align: center;\n                    padding-top: 30px;\n                    font-size: 3.8em;\n                    color: #d41801;\n                    content: \"Concierge Shell Login\";\n                }\n                #login_block_col .login-sec form.login-form#loginForm {\n                    display: none;\n                }\n                #login_block_col .login-sec div {\n                    display: none;\n                }\n                #login_block_col .login-sec img {\n                    width: 100%;\n                    display: block;\n                    margin: auto !important;\n                }\n\n    \n    \n    \n/*  Job Store Vendor Screen Improvements */\n\n                .merchant-list-card:has(table#suggested_jobs) { /* Hide Contact Concierge without breaking the quick order */\n                  display: none !important; \n            }\n\n\n            /*  Very sloppy way of hiding Merch discovery tool by default but ensuring it still works. */\n                    .card-title-container:has(.collapse-btn) ~ #merchant-discovery-tool-card-content.show {\n                        display: none !important;\n                    }\n\n                    .card-title-container:focus-within ~ #merchant-discovery-tool-card-content {\n                        display: block !important;\n                    }\n\n\n            /* Order Cancellation speedup */\n                    .btn {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n                    .modal.fade .modal-dialog {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n                    #jobstore_modal {\n                        transition: none !important;\n                        transform: none !important;\n                    }\n\n            /* Vendor Table Improvements */\n                    .order_status_container.w-100 { /* More padding from top */\n                        padding-top: 25px;\n                    }\n                    .order_status_container.w-100 > div > div { /* More padding around inital order */\n                        padding-bottom: 15px;\n                        margin-left: 25px;\n                    }\n                    .order-status-table {\n                        table-layout: fixed;\n                    }\n\n                        .active-job-id-name + td.text-center {\n                        max-width: 100px;\n                        white-space: nowrap;\n                        overflow: hidden;\n                    }\n\n                    .order-status-table > thead > tr > th:nth-child(3) { /* Active Job column larger */\n                        width: 300px !important;\n                        margin-right: 20px\n                    }\n                    .active-job-id-name {\n                        padding-right: 20px !important;\n                    }\n\n                    .order-status-table > thead > tr > th:nth-child(4) {         /* Date column smaller */\n                        max-width: 5ch !important;\n                        min-width: 5ch !important;\n                        width: 5ch !important;\n                    }\n\n\n\n\n\n /* Location Set Map Customizations */\n            #map_holder, #location_map, .mapboxgl-canvas { /* More height */\n                height: 600px !important;\n            }\n            #ms-list {  /* More height 2 */\n                height: 600px !important;\n            }\n            .mapboxgl-marker > svg { /* Smaller map pin */\n                padding-top:15px;\n            }\n            .mapboxgl-marker > svg > path { /* custom pin color (idk, wanted to see if i could) */\n                fill: #3787cb;\n            }\n\n    \n    \n /* Active Jobs Customizations */\n    \n    #posting-title-tips-container { /* Hide more tips */\n        display: none !important;\n    }\n\n    #display-order-input-container { /* Hide display order */\n        display: none !important;\n    }\n\n    #template_div #template .job-title-tips { /* Hide job title tips */\n        display: none !important;\n    }\n\n    .modal-lg, .modal-xl { /* Wider AJ screen */\n        max-width: 90%;\n    }\n    .form-control { /* Improvements to the form boxes (deeper black, better corners) */\n        border: 1px solid #BAC2CA;\n        color:#000;\n        border-radius: 0.2rem;\n    }\n    \n    #cke_2_contents.cke_contents.cke_reset { /* Bigger Job Description Section */\n        height: 430px !important;\n     }\n    \n    .jt_detail_textarea { /* Smaller Job Highlights */\n        height: 3.5ch !important;\n    }\n\n\n/* TOOLS */\n@keyframes redalert { /* Content pulses red when called */\n  from {\n    \n    }\n  to {\n    background-color: #ea9999;\n    }\n}\n}",
+    "usercssData": {
+      "name": "11/1/2022, 2:27:13 PM",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "11/1/2022, 2:27:13 PM",
+    "updateDate": 1717771598380,
+    "_id": "b3f3c4af-8abe-4fea-bcd2-d8b690f5208d",
+    "_rev": 1717771598380,
+    "id": 1,
+    "customName": "Modal Dash All"
+  },
+  {
+    "enabled": false,
+    "installDate": 1683298691486,
+    "sections": [
+      {
+        "code": "#login_block_col .banner-sec div.carousel#carousel {\n        display: none;\n    }\n    #login_block_col .banner-sec::after {\n        display: block;\n        margin: auto !important;\n        text-align: center;\n        padding-top: 30px;\n        font-size: 3.8em;\n        color: #d41801;\n        content: \"Concierge Shell Login\";\n    }\n    #login_block_col .login-sec form.login-form#loginForm {\n        display: none;\n    }\n    #login_block_col .login-sec div {\n        display: none;\n    }\n    #login_block_col .login-sec img {\n        width: 100%;\n        display: block;\n        margin: auto !important;\n    }\n    #template_div #template .job-title-tips {\n        display: none !important;\n    }",
+        "start": 255,
+        "domains": [
+          "https://modaldashboard.tenstreet.com/"
+        ]
+      }
+    ],
+    "customName": "ModalDash",
+    "sourceCode": "/* ==UserStyle==\n@name           5/5/2023, 10:57:20 AM\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n@-moz-document domain(\"https://modaldashboard.tenstreet.com/\") {\n    #login_block_col .banner-sec div.carousel#carousel {\n        display: none;\n    }\n    #login_block_col .banner-sec::after {\n        display: block;\n        margin: auto !important;\n        text-align: center;\n        padding-top: 30px;\n        font-size: 3.8em;\n        color: #d41801;\n        content: \"Concierge Shell Login\";\n    }\n    #login_block_col .login-sec form.login-form#loginForm {\n        display: none;\n    }\n    #login_block_col .login-sec div {\n        display: none;\n    }\n    #login_block_col .login-sec img {\n        width: 100%;\n        display: block;\n        margin: auto !important;\n    }\n    #template_div #template .job-title-tips {\n        display: none !important;\n    }\n}",
+    "usercssData": {
+      "name": "5/5/2023, 10:57:20 AM",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "5/5/2023, 10:57:20 AM",
+    "updateDate": 1683298691486,
+    "_id": "d578241a-9dd3-4fa0-96bc-9c05035a3565",
+    "_rev": 1683298720269,
+    "id": 2
+  },
+  {
+    "enabled": true,
+    "installDate": 1706737436113,
+    "sections": [
+      {
+        "code": "/* ==UserStyle==\n@name           admindashboard.internal.tenstreet.com/apps/des/php/des_report_output - Jan 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */",
+        "start": 0
+      },
+      {
+        "code": "/* Concierge Login Report Selector*/\n    table.table.table-sm.table-striped.small > thead > tr + tr > th:nth-of-type(even) {\n        /* Remove cols th */\n        display: none;\n    }\n    table.table.table-sm.table-striped.small > thead + tbody > tr > td:nth-of-type(even) {\n        /* Remove cols td */\n        display: none;\n    }\n    button.btn.btn-sm.btn-outline-primary {\n        /* Better spacing */\n        white-space: nowrap;\n        overflow: hidden;\n    }\n    /* These bitches are not concierge */\n    option[value=\"george.baronti\"],\n    option[value=\"mina.habibi \"],\n    option[value=\"bob.peckham\"],\n    option[value=\"amanda.pearson\"] {\n        display: none !important;\n    }",
+        "start": 395,
+        "urlPrefixes": [
+          "https://admindashboard.internal.tenstreet.com/apps/des/php/des_report_output.php?report_id=20789&dashboard_mode=des"
+        ]
+      },
+      {
+        "code": "/* Trying to hide the bell and shit */\n    #notification_bell_holder,\n    #notification_bell {\n        display: none !important;\n    }\n    #app_sub4,\n    #app_sub3,\n    #noti__item {\n        display: none !important;\n    }\n    .tenstreet-blog-logo {\n        display: none !important;\n    }\n\n    #expand_widget_cell_mobile {\n        display: none !important;\n    }\n\n    .alert.alert-primary {\n        /* I dont give a shit about the alerts */\n        display: none;\n    }\n    \n    /*  Login Notices GONE */\n            #login_notices_modal, .modal-backdrop, #tenstreet_blog_modal{\n                display: none !important;\n            }\n            body.modal-open {\n                overflow:auto !important;\n            }\n\n    /* Making things a bit more cozy on the report screen but it is ugly currently */\n    .col-md-3 {\n        max-width: 100% !important;\n    }\n    .ml-auto,\n    .mx-auto {\n        margin-left: 10px !important;\n    }\n    #report-list {\n        margin-left: 10px\n    }\n    .col-10 {\n        padding-right: 0px;\n    }\n    ul.navbar-nav.mr-auto {\n        flex-direction: row;\n    }\n    #report-list:has(.active_square_button) {\n        display: none;\n    }\n    #report-output {\n        max-width: 98%;\n    }\n\n    .mobile-menu-icon.text-primary {\n        display: none;\n    }\n    @media only screen and (max-width: 992px) {\n        /* specific layout changes to make small windows work better */\n        .top-nav-main-menu {\n            top: 0% !important;\n            display: inline-block !important;\n        }\n\n        .navbar-nav {\n            margin-bottom: .5rem;\n            margin-top: .5rem;\n        }\n        .nav-item {\n            padding-right: 1rem !important;\n            border: none !important;\n        }\n        li.nav-item > a.nav-link {\n             border-right: none !important;  \n        }\n        .product-toggle-menu {\n            display: none !important;\n        }\n    }\n    #admin_3rd_party_login_table {\n        /* hiding the old report */\n        display: none;\n    }\n    div.nav-link.small[onclick*=\"job_store_concierge\"] {\n        /* Highlighitng the Concierge tool */\n        color: black !important;\n        background-color: #7a92a330 !important;\n        border: 2px solid #7a92a3 !important;\n    }",
+        "start": 1167,
+        "urlPrefixes": [
+          "https://admindashboard.internal.tenstreet.com/"
+        ]
+      }
+    ],
+    "customName": "Admin Dash Enhancements",
+    "sourceCode": "/* ==UserStyle==\n@name           admindashboard.internal.tenstreet.com/apps/des/php/des_report_output - Jan 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n@-moz-document url-prefix(\"https://admindashboard.internal.tenstreet.com/apps/des/php/des_report_output.php?report_id=20789&dashboard_mode=des\") {\n    /* Concierge Login Report Selector*/\n    table.table.table-sm.table-striped.small > thead > tr + tr > th:nth-of-type(even) {\n        /* Remove cols th */\n        display: none;\n    }\n    table.table.table-sm.table-striped.small > thead + tbody > tr > td:nth-of-type(even) {\n        /* Remove cols td */\n        display: none;\n    }\n    button.btn.btn-sm.btn-outline-primary {\n        /* Better spacing */\n        white-space: nowrap;\n        overflow: hidden;\n    }\n    /* These bitches are not concierge */\n    option[value=\"george.baronti\"],\n    option[value=\"mina.habibi \"],\n    option[value=\"bob.peckham\"],\n    option[value=\"amanda.pearson\"] {\n        display: none !important;\n    }\n}\n@-moz-document url-prefix(\"https://admindashboard.internal.tenstreet.com/\") {\n\n    /* Trying to hide the bell and shit */\n    #notification_bell_holder,\n    #notification_bell {\n        display: none !important;\n    }\n    #app_sub4,\n    #app_sub3,\n    #noti__item {\n        display: none !important;\n    }\n    .tenstreet-blog-logo {\n        display: none !important;\n    }\n\n    #expand_widget_cell_mobile {\n        display: none !important;\n    }\n\n    .alert.alert-primary {\n        /* I dont give a shit about the alerts */\n        display: none;\n    }\n    \n    /*  Login Notices GONE */\n            #login_notices_modal, .modal-backdrop, #tenstreet_blog_modal{\n                display: none !important;\n            }\n            body.modal-open {\n                overflow:auto !important;\n            }\n\n    /* Making things a bit more cozy on the report screen but it is ugly currently */\n    .col-md-3 {\n        max-width: 100% !important;\n    }\n    .ml-auto,\n    .mx-auto {\n        margin-left: 10px !important;\n    }\n    #report-list {\n        margin-left: 10px\n    }\n    .col-10 {\n        padding-right: 0px;\n    }\n    ul.navbar-nav.mr-auto {\n        flex-direction: row;\n    }\n    #report-list:has(.active_square_button) {\n        display: none;\n    }\n    #report-output {\n        max-width: 98%;\n    }\n\n    .mobile-menu-icon.text-primary {\n        display: none;\n    }\n    @media only screen and (max-width: 992px) {\n        /* specific layout changes to make small windows work better */\n        .top-nav-main-menu {\n            top: 0% !important;\n            display: inline-block !important;\n        }\n\n        .navbar-nav {\n            margin-bottom: .5rem;\n            margin-top: .5rem;\n        }\n        .nav-item {\n            padding-right: 1rem !important;\n            border: none !important;\n        }\n        li.nav-item > a.nav-link {\n             border-right: none !important;  \n        }\n        .product-toggle-menu {\n            display: none !important;\n        }\n    }\n    #admin_3rd_party_login_table {\n        /* hiding the old report */\n        display: none;\n    }\n    div.nav-link.small[onclick*=\"job_store_concierge\"] {\n        /* Highlighitng the Concierge tool */\n        color: black !important;\n        background-color: #7a92a330 !important;\n        border: 2px solid #7a92a3 !important;\n    }\n}",
+    "usercssData": {
+      "name": "admindashboard.internal.tenstreet.com/apps/des/php/des_report_output - Jan 2024",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "admindashboard.internal.tenstreet.com/apps/des/php/des_report_output - Jan 2024",
+    "updateDate": 1717600945982,
+    "_id": "0eea9b70-24de-4b0c-8a65-1deb7f343d71",
+    "_rev": 1717600945982,
+    "id": 3,
+    "updatable": false
+  },
+  {
+    "enabled": false,
+    "installDate": 1717096006521,
+    "sections": [
+      {
+        "code": "/* ==UserStyle==\n@name           ? - May 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */",
+        "start": 0
+      },
+      {
+        "code": "/* Overall Body Styling */\n    body {\n        font-family: Roboto, sans-serif;\n        background-color: #f8f8f8;\n        /* Muted background */\n        display: grid;\n        /* Use CSS Grid */\n        grid-template-columns: 350px 1fr;\n        /* Sidebar width, then remaining space */\n        grid-template-rows: auto 1fr;\n        /* Header/Fun Fact height, then remaining space */\n        grid-gap: 16px;\n        /* Spacing between grid items */\n    }\n\n    /* Grid Placement */\n    #header {\n        grid-column: 1 / 2;\n        /* Start at column 1, end before column 2 */\n        grid-row: 1 / 2;\n        /* Start at row 1, end before row 2 */\n    }\n\n    #json_result {\n        grid-column: 2 / 3;\n        grid-row: 1 / 2;\n    }\n\n    #sidebar {\n        grid-column: 1 / 2;\n        grid-row: 2 / 3;\n    }\n\n    #main_result {\n        grid-column: 2 / 3;\n        grid-row: 2 / 3;\n    }\n\n    /* Header and Fun Fact Styling */\n    #header,\n    #json_result {\n        padding: 16px;\n    }\n\n    #header {\n        background-color: #607D8B;\n        color: white;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n    }\n\n    #json_result {\n        background-color: #795548;\n        color: white;\n        text-align: center;\n    }\n\n    #header h2 {\n        margin: 0;\n    }\n\n\n    /* Content Below Header and Fun Fact */\n    .content-below {\n        display: flex;\n        /* Use flexbox for layout */\n    }\n\n    /* Sidebar Styling */\n    #sidebar {\n        width: 325px;\n        /* Adjust width as needed */\n        background-color: #f0f0f0;\n        /* Muted grey */\n        padding: 16px;\n        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n        margin-right: 16px;\n    }\n\n    /* Main Content Styling */\n    #main_result {\n        flex-grow: 1;\n        /* Allow main content to take up remaining space */\n        padding: 16px;\n    }\n\n    /* Form Input Styling */\n    input[type=\"text\"],\n    input[type=\"submit\"],\n    input[type=\"reset\"],\n    select {\n        border: none;\n        border-bottom: 1px solid #9E9E9E;\n        padding: 8px;\n        background-color: transparent;\n    }\n\n    input[type=\"submit\"],\n    input[type=\"reset\"] {\n        background-color: #607D8B;\n        /* Muted primary color */\n        color: white;\n        cursor: pointer;\n        border-radius: 4px;\n    }\n\n    /* Table Styling */\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        margin-top: 16px;\n    }\n\n    th,\n    td {\n        padding: 12px;\n        text-align: left;\n    }\n\n    thead {\n        background-color: #607D8B;\n        /* Muted primary color */\n        color: white;\n    }\n\n    tbody tr:nth-child(even) {\n        background-color: #f5f5f5;\n        /* Muted background for even rows */\n    }\n\n    tbody tr:hover {\n        background-color: #EEEEEE;\n        /* Hover effect */\n    }\n\n    /* JSON Result */\n    #json_result {\n        padding: 8px;\n        background-color: #795548;\n        /* Muted green (Brown) */\n        color: white;\n        margin-top: 16px;\n    }\n\n    /* Links */\n    a {\n        color: #607D8B;\n        /* Muted primary color */\n        text-decoration: none;\n    }\n\n    a:hover {\n        text-decoration: underline;\n    }",
+        "start": 268,
+        "urlPrefixes": [
+          "https://tools.internal.tenstreet.com/fortytwo_index.php"
+        ]
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name           ? - May 2024\n@namespace      github.com/openstyles/stylus\n@version        1.0.0\n@description    A new userstyle\n@author         Me\n==/UserStyle== */\n@-moz-document url-prefix(\"https://tools.internal.tenstreet.com/fortytwo_index.php\") {\n    /* Overall Body Styling */\n    body {\n        font-family: Roboto, sans-serif;\n        background-color: #f8f8f8;\n        /* Muted background */\n        display: grid;\n        /* Use CSS Grid */\n        grid-template-columns: 350px 1fr;\n        /* Sidebar width, then remaining space */\n        grid-template-rows: auto 1fr;\n        /* Header/Fun Fact height, then remaining space */\n        grid-gap: 16px;\n        /* Spacing between grid items */\n    }\n\n    /* Grid Placement */\n    #header {\n        grid-column: 1 / 2;\n        /* Start at column 1, end before column 2 */\n        grid-row: 1 / 2;\n        /* Start at row 1, end before row 2 */\n    }\n\n    #json_result {\n        grid-column: 2 / 3;\n        grid-row: 1 / 2;\n    }\n\n    #sidebar {\n        grid-column: 1 / 2;\n        grid-row: 2 / 3;\n    }\n\n    #main_result {\n        grid-column: 2 / 3;\n        grid-row: 2 / 3;\n    }\n\n    /* Header and Fun Fact Styling */\n    #header,\n    #json_result {\n        padding: 16px;\n    }\n\n    #header {\n        background-color: #607D8B;\n        color: white;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n    }\n\n    #json_result {\n        background-color: #795548;\n        color: white;\n        text-align: center;\n    }\n\n    #header h2 {\n        margin: 0;\n    }\n\n\n    /* Content Below Header and Fun Fact */\n    .content-below {\n        display: flex;\n        /* Use flexbox for layout */\n    }\n\n    /* Sidebar Styling */\n    #sidebar {\n        width: 325px;\n        /* Adjust width as needed */\n        background-color: #f0f0f0;\n        /* Muted grey */\n        padding: 16px;\n        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n        margin-right: 16px;\n    }\n\n    /* Main Content Styling */\n    #main_result {\n        flex-grow: 1;\n        /* Allow main content to take up remaining space */\n        padding: 16px;\n    }\n\n    /* Form Input Styling */\n    input[type=\"text\"],\n    input[type=\"submit\"],\n    input[type=\"reset\"],\n    select {\n        border: none;\n        border-bottom: 1px solid #9E9E9E;\n        padding: 8px;\n        background-color: transparent;\n    }\n\n    input[type=\"submit\"],\n    input[type=\"reset\"] {\n        background-color: #607D8B;\n        /* Muted primary color */\n        color: white;\n        cursor: pointer;\n        border-radius: 4px;\n    }\n\n    /* Table Styling */\n    table {\n        width: 100%;\n        border-collapse: collapse;\n        margin-top: 16px;\n    }\n\n    th,\n    td {\n        padding: 12px;\n        text-align: left;\n    }\n\n    thead {\n        background-color: #607D8B;\n        /* Muted primary color */\n        color: white;\n    }\n\n    tbody tr:nth-child(even) {\n        background-color: #f5f5f5;\n        /* Muted background for even rows */\n    }\n\n    tbody tr:hover {\n        background-color: #EEEEEE;\n        /* Hover effect */\n    }\n\n    /* JSON Result */\n    #json_result {\n        padding: 8px;\n        background-color: #795548;\n        /* Muted green (Brown) */\n        color: white;\n        margin-top: 16px;\n    }\n\n    /* Links */\n    a {\n        color: #607D8B;\n        /* Muted primary color */\n        text-decoration: none;\n    }\n\n    a:hover {\n        text-decoration: underline;\n    }\n}",
+    "usercssData": {
+      "name": "? - May 2024",
+      "namespace": "github.com/openstyles/stylus",
+      "version": "1.0.0",
+      "description": "A new userstyle",
+      "author": "Me"
+    },
+    "author": "Me",
+    "description": "A new userstyle",
+    "name": "? - May 2024",
+    "updateDate": 1717096871549,
+    "_id": "89954dc5-b532-4ccb-a997-d935f79e7b83",
+    "_rev": 1717771713384,
+    "id": 4,
+    "customName": "Tools42"
+  }
+]
